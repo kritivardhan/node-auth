@@ -32,7 +32,7 @@ const handleErrors = (err) => {
 
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
-    return jwt.sign({id}, 'net ninja screte', {
+    return jwt.sign({id}, 'secret key auth', {
         expiresIn: maxAge
     });
 }

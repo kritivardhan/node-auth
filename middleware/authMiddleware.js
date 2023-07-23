@@ -6,7 +6,7 @@ const requireAuth = (req, res, next) =>{
 
     // Check web token exist and verified
     if(token){
-        jwt.verify(token, 'net ninja screte', (err, decodedToekn) => {
+        jwt.verify(token, 'secret key auth', (err, decodedToekn) => {
             if(err){ 
                 console.log(err.message);
                 res.redirect('/login');
@@ -28,7 +28,7 @@ const checkUser = (req, res, next) => {
     const token = req.cookies.jwt;
 
     if(token){
-        jwt.verify(token, 'net ninja screte', async (err, decodedToekn) => {
+        jwt.verify(token, 'secret key auth', async (err, decodedToekn) => {
             if(err){ 
                 console.log(err.message);
                 res.locals.user = null;
